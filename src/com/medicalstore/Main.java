@@ -7,33 +7,31 @@ public class Main {
     public void handleUserSelection(int option) {
         MedicineStore medicineStore = new MedicineStore();
         UserInterface userInterface = new UserInterface();
-        boolean flag = true;
-        while (flag) {
-            switch (option) {
-                case 1:
-                    Main main = new Main();
-                    main.addMedicine();
-                    break;
-                case 2:
-                    String name = userInterface.selectMedicine();
-                    Medicine medicine = medicineStore.getMedicine(name);
-                    medicineStore.remove(medicine);
-                    break;
-                case 3:
-                    userInterface.print(medicineStore.getMedicineList());
-                    break;
-                case 4:
+
+        switch (option) {
+            case 1:
+                Main main = new Main();
+                main.addMedicine();
+                break;
+            case 2:
+                String name = userInterface.selectMedicine();
+                Medicine medicine = medicineStore.getMedicine(name);
+                medicineStore.remove(medicine);
+                break;
+            case 3:
+                userInterface.print(medicineStore.getMedicineList());
+                break;
+            case 4:
                    /* String nameOfMedicine = userInterface.selectMedicine();
                     Medicine medicine1 = medicineStore.getMedicine(nameOfMedicine);
                     medicineStore.updateMedicine(String.valueOf(medicine1));*/
-                    updateMedicine();
-                    break;
-                case 5:
-                    flag = false;
-                    break;
-                default:
-                    System.out.println("Medicine is not in list!");
-            }
+                updateMedicine();
+                break;
+            case 5:
+
+                break;
+            default:
+                System.out.println("Medicine is not in list!");
         }
     }
 
@@ -65,9 +63,12 @@ public class Main {
         userInterface.print(medicineStore.getMedicineList());
  */
         UserInterface userInterface = new UserInterface();
-        int option = userInterface.showMainMenu();
         Main main = new Main();
-        main.handleUserSelection(option);
+        int option = 0;
+        while (option != 5) {
+            option = userInterface.showMainMenu();
+            main.handleUserSelection(option);
+        }
     }
 
     public void addMedicine() {
@@ -91,6 +92,7 @@ public class Main {
         UserInterface userInterface = new UserInterface();
         userInterface.print(medicineStore.getMedicineList());
     }
+
     public void updateMedicine() {
         UserInterface userInterface = new UserInterface();
         String medicineName = userInterface.selectMedicine();

@@ -1,7 +1,6 @@
 package com.medicalstore;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class MedicineStore {
     private ArrayList<Medicine> medicineList = new ArrayList();
