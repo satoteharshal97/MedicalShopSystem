@@ -23,7 +23,7 @@ public class UserInterface {
         return option;
     }
 
-    public String selectMedicine() {
+    public String  selectMedicine() {
         System.out.println("Enter name of medicine to remove: ");
         String nameOfMedicine = scanner.nextLine();
         return nameOfMedicine;

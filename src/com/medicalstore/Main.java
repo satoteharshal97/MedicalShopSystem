@@ -2,7 +2,7 @@ package com.medicalstore;
 
 import static com.medicalstore.UserInterface.scanner;
 
-public class Main {
+public class Main{
 
     public void handleUserSelection(int option) {
         MedicineStore medicineStore = new MedicineStore();
